@@ -198,6 +198,8 @@ int main(void) {
 
 ```
 
+TODO: add foobar2.c, compare/contrast the two.  Expalin use of event environments.
+
 ## Building
 
 As stated above, the code here uses the GLib C library for a core
