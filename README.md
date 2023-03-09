@@ -60,7 +60,7 @@ The Executive API revolves around two abstract data types: Executive
 and Event. We say abstract because user access to them is via an API
 only.  No internal details of either type are revealed by
 [executive.h](src/main/include/executive/executive.h) --- no struct
-members are visible to calling code. Chapeau [David Parnas[(https://en.wikipedia.org/wiki/David_Parnas).
+members are visible to calling code. Chapeau [David Parnas](https://en.wikipedia.org/wiki/David_Parnas).
 
 The primary routines are:
 
