@@ -44,7 +44,7 @@ When that time occurs, the Event is extracted from the (head of) the
 Executive and its associated *Action* takes place.
 
 The Executive is used in combination with Unix *select* system
-call. We compute the time delta from now to earliest Executive event
+call. We compute the time delta from now to the earliest Executive event
 time, then select on fds of interest for that delta.  If/when I/O data
 does arrive, we process it and re-compute a new delta and start over.
 Eventually, no data will arrive in the interval and we pop the head
