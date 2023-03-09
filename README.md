@@ -34,6 +34,11 @@ routines) called an Executive.  It is packaged in the form of a
 library.  Once built, you have a .h file and a .a/.so file to use in
 larger applications.
 
+This version of the Executive makes use of the GList data structure
+from the GLib C library.  It should be buildable anywhere that GLib
+is.  There is a second implementation of the Executive, one suited to
+embedded systems. More to follow on that.
+
 ## Executive API
 
 The Executive API revolves around two abstract data types: Executive
