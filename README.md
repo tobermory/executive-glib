@@ -187,13 +187,12 @@ int main(void) {
     if( FD_ISSET( STDIN_FILENO, &work ) ) {
       char input[1024];
       int nin = read( STDIN_FILENO, input, sizeof(input) - 1 );
-	  if( nin < 1 )
+      if( nin < 1 )
         break;
-	  input[nin] = 0;
-	  int lenInput = strlen( input );
-	  printf( "%d\n", lenInput );
+      input[nin] = 0;
+      int lenInput = strlen( input );
+      printf( "%d\n", lenInput );
 	}
-	
   }
 }
 
