@@ -1,0 +1,82 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+			     http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+<!-- 
+  Executive-GLib is a C project, NOT a Java
+  project. This Maven pom is included purely as the vehicle by which
+  we attach a LICENCE to the top of all C source code files (and Makefile).
+  There are no Java artifacts here.
+-->
+
+
+  <groupId>tobermory</groupId>
+  <artifactId>Executive-GLib</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+
+  <name>Executive-GLib</name>
+
+  <url>https://github.com/tobermory/executive-glib</url>
+
+  <description>
+   The Executive: A Mechanism For Multiplexing I/O and Timed Actions
+  </description>
+
+  <inceptionYear>1929</inceptionYear>
+
+  <developers>
+    <developer>
+      <id>tobermory</id>
+      <name>Stuart Maclean</name>
+      <email>sdmaclean@gmail.com</email>
+    </developer>
+  </developers>
+  
+  <licenses>
+    <license>
+      <name>BSD 3-Clause</name>
+      <url>http://opensource.org/licenses/BSD-3-Clause</url>
+      <comments>See LICENSE.txt</comments>
+      <distribution>manual</distribution>
+    </license>
+  </licenses>
+
+  <build>
+    <defaultGoal>process-sources</defaultGoal>
+    <plugins>
+      <plugin>
+		<groupId>com.mycila</groupId>
+		<artifactId>license-maven-plugin</artifactId>
+		<version>2.11</version>
+		<configuration>
+		  <header>LICENSE.txt</header>
+		  <quiet>false</quiet>
+		  <strictCheck>true</strictCheck>
+		</configuration>
+		<executions>
+		  <execution>
+			<id>main</id>
+			<phase>process-sources</phase>
+			<goals>
+			  <goal>format</goal>
+			</goals>
+			<configuration>
+			  <includes>
+				<include>src/main/c/*.c</include>
+				<include>src/main/include/*.h</include>
+				<include>src/test/c/*.c</include>
+				<include>**/Makefile</include>
+			  </includes>
+			  <mapping>
+				<Makefile>SCRIPT_STYLE</Makefile>
+			  </mapping>
+			</configuration>
+		  </execution>
+		</executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
