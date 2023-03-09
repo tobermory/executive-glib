@@ -38,9 +38,10 @@ Executive is not! In case no-one had told you, threads are evil.
 
 The C code here (Unix/Linux flavoured) implements a minimal API (5
 main routines, a few supplementary ones) called an Executive. It is
-packaged in the form of a library of just one [.c](src/main/c/executive.c) and one [.h](src/main/include/executive/executive.h) file.
-Once built, you have the .h plus a .a/.so file to use in larger
-applications.
+packaged in the form of a library of just one
+[.c](src/main/c/executive.c) and one
+[.h](src/main/include/executive/executive.h) file.  Once built, you
+have the .h plus a .a/.so file to use in larger applications.
 
 This version of the Executive makes use of the GList data structure
 from the GLib C library, hence the repo name Executive-GLib.  It
@@ -63,8 +64,8 @@ The primary routines are:
 Executive* executiveNew(void);
 
 size_t executiveAdd( Executive* e, 
-   				     struct timeval* scheduledTime,
-					 Action action );
+                     struct timeval* scheduledTime,
+                     Action action );
 
 size_t executiveAddWithEnv( Executive* e, 
   						    struct timeval* scheduledTime,
