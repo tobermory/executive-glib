@@ -213,7 +213,7 @@ $ sudo apt install libglib2.0-dev
 or similar for other package managers (yum, etc). Or perhaps get GLib
 and build from source.
 
-Buildin the Executive library presented here is via GNU make, we
+Building the Executive library presented here is via GNU make, we
 supply a simple [Makefile](./Makefile).  If needed
 
 ```
@@ -221,7 +221,7 @@ $ sudo apt install make
 ```
 
 The build should locate the GLib library (*.h, *.a, *.so) via
-*pkg-config*.  If this does not work, you may need to alter the
+`pkg-config`.  If this does not work, you may need to alter the
 Makefile:
 
 ```
