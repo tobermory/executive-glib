@@ -37,8 +37,13 @@ Executive is not! In case no-one had told you, threads are evil.
 ## Introducing the Executive
 
 The C code here (Unix/Linux flavoured) implements a minimal API (5
-main routines, a few supplementary ones) called an Executive. It is
-packaged in the form of a library of just one
+main routines, a few supplementary ones) called an Executive. At its
+heart, the *Executive* is just a time-ordered list of *Event* objects.
+Events are 'posted' to the Executive for some time in the future.
+When that time occurs, the Event is extracted from the (head of) the
+Executive and its associated *Action* takes place.
+
+The Executive is packaged in the form of a library of just one
 [.c](src/main/c/executive.c) and one
 [.h](src/main/include/executive/executive.h) file.  Once built, you
 have the .h plus a .a/.so file to use in larger applications.
@@ -55,7 +60,7 @@ The Executive API revolves around two abstract data types: Executive
 and Event. We say abstract because user access to them is via an API
 only.  No internal details of either type are revealed by
 [executive.h](src/main/include/executive/executive.h) --- no struct
-members are visible to calling code.
+members are visible to calling code. Chapeau [David Parnas[(https://en.wikipedia.org/wiki/David_Parnas).
 
 The primary routines are:
 
