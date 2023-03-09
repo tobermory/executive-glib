@@ -274,20 +274,22 @@ $ make tests V=1
 to go from this:
 
 ```
-src/test/c/test[XYZ].c
+src/test/c/fireTests.c
+src/test/c/foobar.c
+src/test/c/foobar2.c
+src/test/c/memTests.c
 ```
 
 to this:
 
 ```
-test[XYZ]
+fireTest, foobar, foobar2, memTests
 ```
 
 and we can run any of them:
 
 ```
-$ ./testX
-$ ./testY
+$ ./fireTests ; ./foobar ; ./foobar2 ; etc
 ```
 
 ---
