@@ -167,12 +167,12 @@ int main(void) {
     if( timercmp( head, &now, < ) ) {
       executiveFire( E, &now );
       continue;
-	}	  
+    }	  
 
-	struct timeval wait;
+    struct timeval wait;
     timersub( head, &now, &wait );
 	
-	fd_set work = fds;
+    fd_set work = fds;
     int ready = select( fdMax + 1, &work, NULL, NULL, &wait );
     if( ready == -1 ) {
       break; 
