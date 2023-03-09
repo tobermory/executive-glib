@@ -165,7 +165,6 @@ int main(void) {
 
   while( !done ) {
 
-    struct timeval now;
     gettimeofday( &now, NULL );
     struct timeval *head = executivePeek(E);
 
