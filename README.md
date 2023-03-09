@@ -198,7 +198,7 @@ int main(void) {
 
 ```
 
-TODO: add commentary of [foobar2.c[(src/test/c/foobar2.c), compare/contrast the two.  Explain use of event environments.
+TODO: add commentary of [foobar2.c](src/test/c/foobar2.c), compare/contrast the two.  Explain use of event environments.
 
 ## Building
 
