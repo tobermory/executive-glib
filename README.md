@@ -200,7 +200,7 @@ int main(void) {
 
 TODO: add commentary of [foobar2.c](src/test/c/foobar2.c), compare/contrast the two.  Explain use of event environments.
 
-## Building
+## Building The Library
 
 As stated above, the code here uses the GLib C library for a core
 [data structure](https://docs.gtk.org/glib/struct.List.html). Assuming
@@ -263,6 +263,8 @@ By default, the build details are terse.  To see a bit more:
 $ make clean
 $ make V=1
 ```
+
+## Test Applications
 
 Some simple test cases are also provided:
 
