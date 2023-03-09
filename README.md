@@ -164,7 +164,7 @@ int main(void) {
     gettimeofday( &now, NULL );
     struct timeval *head = executivePeek(E);
 
-	if( timercmp( head, &now, < ) ) {
+    if( timercmp( head, &now, < ) ) {
       executiveFire( E, &now );
       continue;
 	}	  
