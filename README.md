@@ -110,7 +110,7 @@ plus a few more of rare use.  See [executive.h](src/main/include/executive/execu
 ## Executive In Action
 
 The problem statement above can be solved using an Executive.  The
-code below is copied from [foobar.c](src/test/c/foobar.c), with some
+code below is copied from [foobar.c](src/test/c/foobar.c), with 
 commentary removed for brevity:
 
 ```
