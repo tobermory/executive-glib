@@ -16,35 +16,43 @@
 
 Write a (Unix/C) program that does the following:
 
-Read lines of text from the user at a keyboard.  For each line L
+Read lines of text from the user at a keyboard. For each line L
 received, print the line length.  Concurrently with servicing this
 user I/O, print 'foo' every 5 seconds and 'bar' every 7. Exit
 gracefully after one minute.
 
-I can think of several ways to attack this problem
+I can think of several ways to attack this problem:
 
-+ A
++ Create three threads, one each to handle the keyboard, the foo
+printing and the bar printing.  The latter two can use sleep() for
+their timing. The 60-second timeout can be solved via alarm().
 
-+ B
++ Without using threads, use alarm() for both foo and bar printing and
+main loop can process user I/O. A final alarm() can end program at
+60s.
+
++ The Executive presented here.  The first two solutions are yuk, the
+Executive is not!
 
 ## Introducing the Executive
 
 The C code here (Unix/Linux flavoured) implements a minimal API (10
 routines) called an Executive.  It is packaged in the form of a
-library.  Once built, you have a .h file and a .a/.so file to use in
-larger applications.
+library of just one .c and one .h file.  Once built, you have the .h
+plus a .a/.so file to use in larger applications.
 
 This version of the Executive makes use of the GList data structure
-from the GLib C library.  It should be buildable anywhere that GLib
-is.  There is a second implementation of the Executive, one suited to
-embedded systems. More to follow on that.
+from the GLib C library, hence the repo name Executive-GLib.  It
+should be buildable anywhere that GLib is.  There is a second
+implementation of the Executive, one suited to embedded systems (has
+no Unix depenedency, and no mallocs!). More to follow on that.
 
 ## Executive API
 
 The Executive API revolves around two abstract data types: Executive
-and Event.  We say abstract because user access to them is via an API
-only.  No internal details of either type are revealed --- no struct
-members are visible to calling code.
+and Event. We say abstract because user access to them is via an API
+only.  No internal details of either type are revealed by
+*executive.h* --- no struct members are visible to calling code.
 
 The primary routines are:
 
