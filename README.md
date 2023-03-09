@@ -38,7 +38,7 @@ Executive is not! In case no-one had told you, threads are evil.
 
 The C code here (Unix/Linux flavoured) implements a minimal API (5
 main routines, a few supplementary ones) called an Executive. It is
-packaged in the form of a library of just one .c and one .h file.
+packaged in the form of a library of just one [.c](src/main/c/executive.c) and one [.h](src/main/include/executive/executive.h) file.
 Once built, you have the .h plus a .a/.so file to use in larger
 applications.
 
