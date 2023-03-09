@@ -68,9 +68,9 @@ size_t executiveAdd( Executive* e,
                      Action action );
 
 size_t executiveAddWithEnv( Executive* e, 
-  						    struct timeval* scheduledTime,
-							Action action,
-							void* env );
+                            struct timeval* scheduledTime,
+                            Action action,
+                            void* env );
 
 struct timeval* executivePeek( Executive* );
 
@@ -80,11 +80,11 @@ void executiveFire( Executive*, struct timeval* actualTime );
 These are supplemented by the lesser-used:
 
 ```
-size_t executiveAddWithFreeFunc( Executive* e, 
-								 struct timeval* scheduledTime,
-								 Action action,
-								 void* env,
-								 void (*envFree)( void* ) );
+size_t executiveAddWithFreeFunc( Executive* e,
+                                 struct timeval* scheduledTime,
+                                 Action action,
+                                 void* env,
+                                 void (*envFree)( void* ) );
 
 size_t executiveLength( Executive* );
 
