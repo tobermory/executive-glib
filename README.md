@@ -1,4 +1,4 @@
-# The Executive: A Mechanism For Multiplexing I/O and Timed Actions
+# The Executive: Multiplexing I/O and Timed Actions
 
 + A Problem Statement
 
