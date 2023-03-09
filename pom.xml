@@ -66,7 +66,7 @@
 			<configuration>
 			  <includes>
 				<include>src/main/c/*.c</include>
-				<include>src/main/include/*.h</include>
+				<include>src/main/include/executive/*.h</include>
 				<include>src/test/c/*.c</include>
 				<include>**/Makefile</include>
 			  </includes>
