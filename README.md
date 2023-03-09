@@ -197,7 +197,7 @@ int main(void) {
       input[nin] = 0;
       int lenInput = strlen( input );
       printf( "%d\n", lenInput );
-	}
+    }
   }
 }
 
