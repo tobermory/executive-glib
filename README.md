@@ -17,7 +17,7 @@
 Write a (Unix/C) program that does the following:
 
 **Read lines of text from the user at a keyboard. For each line L
-received, print the line length.  Concurrently with servicing this
+received, print the line length. Concurrently with servicing this
 user I/O, print 'foo' every 5 seconds and 'bar' every 7. Exit
 gracefully after one minute.**
 
@@ -31,15 +31,16 @@ their timing. The 60-second timeout can be solved via alarm().
 main loop can process user I/O. A final alarm() can end program at
 60s.
 
-+ The Executive presented here.  The first two solutions are yuk, the
-Executive is not!
++ The Executive presented here. The first two solutions are yuk, the
+Executive is not! In case no-one had told you, threads are evil.
 
 ## Introducing the Executive
 
-The C code here (Unix/Linux flavoured) implements a minimal API (10
-routines) called an Executive.  It is packaged in the form of a
-library of just one .c and one .h file.  Once built, you have the .h
-plus a .a/.so file to use in larger applications.
+The C code here (Unix/Linux flavoured) implements a minimal API (5
+main routines, a few supplementary ones) called an Executive. It is
+packaged in the form of a library of just one .c and one .h file.
+Once built, you have the .h plus a .a/.so file to use in larger
+applications.
 
 This version of the Executive makes use of the GList data structure
 from the GLib C library, hence the repo name Executive-GLib.  It
@@ -198,9 +199,9 @@ int main(void) {
 
 ## Building
 
-The code here uses the GLib C library for a core [data
-structure](https://docs.gtk.org/glib/struct.List.html). Assuming this
-library is not installed on your system, you'll need to:
+As stated above, the code here uses the GLib C library for a core
+[data structure](https://docs.gtk.org/glib/struct.List.html). Assuming
+this library is not installed on your system, you'll need to:
 
 ```
 $ sudo apt install libglib2.0-dev
