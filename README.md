@@ -53,7 +53,8 @@ no Unix depenedency, and no mallocs!). More to follow on that.
 The Executive API revolves around two abstract data types: Executive
 and Event. We say abstract because user access to them is via an API
 only.  No internal details of either type are revealed by
-*executive.h* --- no struct members are visible to calling code.
+[executive.h](src/main/include/executive/executive.h) --- no struct
+members are visible to calling code.
 
 The primary routines are:
 
