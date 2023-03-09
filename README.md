@@ -16,10 +16,12 @@
 
 Write a (Unix/C) program that does the following:
 
+**
 Read lines of text from the user at a keyboard. For each line L
 received, print the line length.  Concurrently with servicing this
 user I/O, print 'foo' every 5 seconds and 'bar' every 7. Exit
 gracefully after one minute.
+**
 
 I can think of several ways to attack this problem:
 
