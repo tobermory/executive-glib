@@ -128,8 +128,9 @@ plus a few more of rare use.  See [executive.h](src/main/include/executive/execu
 ## Executive In Action
 
 The problem statement above can be solved using an Executive.  The
-code below is copied from [foobar.c](src/test/c/foobar.c), with 
-commentary removed for brevity:
+code below is copied from
+[foobar-executive.c](src/test/c/foobar-executive.c), with commentary
+removed for brevity:
 
 ```
 static void execActionFoo( Event* e, struct timeval* actualTime ) {
@@ -220,7 +221,7 @@ int main(void) {
 
 ```
 
-TODO: add commentary of [foobar2.c](src/test/c/foobar2.c), compare/contrast the two.  Explain use of event environments.
+TODO: add commentary of [foobar-executive-env.c](src/test/c/foobar-executive-env.c), compare/contrast the two.  Explain use of event environments.
 
 ## Building The Library
 
@@ -298,22 +299,24 @@ $ make tests V=1
 to go from this:
 
 ```
-src/test/c/fireTests.c
-src/test/c/foobar.c
-src/test/c/foobar2.c
 src/test/c/memTests.c
+src/test/c/fireTests.c
+src/test/c/foobar-executive.c
+src/test/c/foobar-executive-env.c
+src/test/c/foobar2-pthreads.c
+src/test/c/foobar2-timerfd.c
 ```
 
 to this:
 
 ```
-fireTest, foobar, foobar2, memTests
+memTests, fireTests, foobar-executive, etc
 ```
 
 and we can run any of them:
 
 ```
-$ ./fireTests ; ./foobar ; ./foobar2 ; etc
+$ ./fireTests ; ./foobar-executive ; ./foobar-pthreads ; etc
 ```
 
 ---
