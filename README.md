@@ -23,15 +23,17 @@ gracefully after one minute.**
 
 I can think of several ways to attack this 'foobar' problem:
 
-+ Create three threads, one each to handle the foo printing, the bar
++ Use the POSIX [pthread](https://man7.org/linux/man-pages/man3/pthread_create.3.html) API. Create three threads, one each to handle the foo printing, the bar
 printing and the end condition.  All can use sleep() for their
 timing. The main thread can service user input. A variation on this
 could use alarm() for the end condition instead.  Our
 [version](src/test/c/foobar-pthreads.c).
 
-+ Use alarm() for both foo and bar printing and
-main loop can process user I/O. A final alarm() can end program at
-60s.
++ Use the POSIX
+[alarm](https://man7.org/linux/man-pages/man2/alarm.2.html) API for
+both foo and bar printing and main loop can process user I/O. A final
+alarm() can end program at 60s. Alas, only one alarm can be pending at
+once, on Linux at least, so this solution gets messy quickly.
 
 + Use the Linux
 [timerfd](https://man7.org/linux/man-pages/man2/timerfd_create.2.html)
