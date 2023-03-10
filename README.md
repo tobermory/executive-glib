@@ -303,8 +303,8 @@ src/test/c/memTests.c
 src/test/c/fireTests.c
 src/test/c/foobar-executive.c
 src/test/c/foobar-executive-env.c
-src/test/c/foobar2-pthreads.c
-src/test/c/foobar2-timerfd.c
+src/test/c/foobar-pthreads.c
+src/test/c/foobar-timerfd.c
 ```
 
 to this:
