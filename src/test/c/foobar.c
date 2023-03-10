@@ -49,12 +49,12 @@
  * servicing this user I/O, print 'foo' every 5 seconds and 'bar'
  * every 7. Exit gracefully after the one minute.
  *
- * See also ./foobar2.c for a version of this that uses simple
+ * See also ./foobar-executive-env.c for a version of this that uses simple
  * 'environment' objects that Executive event actions manipulate.
  * This can reduce need for globals, and concentrates the main program
  * logic more in the main executive/select loop.
  *
- * @see ./foobar.c
+ * @see ./foobar-executive.c
  */
 
 static void execActionFoo( Event* e, struct timeval* actualTime ) {
@@ -142,7 +142,6 @@ int main(void) {
   while( !done ) {
 
 	/* Step 1: peek at earliest Executive event time */
-    struct timeval now;
     gettimeofday( &now, NULL );
     struct timeval *head = executivePeek(E);
 

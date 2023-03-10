@@ -137,7 +137,6 @@ int main(void) {
 	  bar = false;
 	}
 
-    struct timeval now;
     gettimeofday( &now, NULL );
     struct timeval *head = executivePeek(E);
 
