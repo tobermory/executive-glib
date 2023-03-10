@@ -31,8 +31,12 @@ their timing. The 60-second timeout can be solved via alarm().
 main loop can process user I/O. A final alarm() can end program at
 60s.
 
-+ The Executive presented here. The first two solutions are yuk, the
-Executive is not! In case no-one had told you, threads are evil.
++ Use the Linux [timerfd](https://man7.org/linux/man-pages/man2/timerfd_create.2.html) API. I am fairly new this. It does a clean,
+terse job of solving the problem. Alas it is Linux-specific, so not for
+other Unices. Our [version](src/test/c/foobar-timerfd.c).
+
+To that list we can add the focus of the page you are reading: the
+Executive solution.
 
 ## Introducing the Executive
 
