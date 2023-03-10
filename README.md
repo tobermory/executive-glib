@@ -23,17 +23,21 @@ gracefully after one minute.**
 
 I can think of several ways to attack this problem:
 
-+ Create three threads, one each to handle the keyboard, the foo
-printing and the bar printing.  The latter two can use sleep() for
-their timing. The 60-second timeout can be solved via alarm().
++ Create three threads, one each to handle the foo printing, the bar
+printing and the end condition.  All can use sleep() for their
+timing. The main thread can service user input. A variation on this
+could use alarm() for the end condition instead.  Our
+[version](src/test/c/foobar-pthreads.c).
 
-+ Without using threads, use alarm() for both foo and bar printing and
++ Use alarm() for both foo and bar printing and
 main loop can process user I/O. A final alarm() can end program at
 60s.
 
-+ Use the Linux [timerfd](https://man7.org/linux/man-pages/man2/timerfd_create.2.html) API. I am fairly new this. It does a clean,
-terse job of solving the problem. Alas it is Linux-specific, so not for
-other Unices. Our [version](src/test/c/foobar-timerfd.c).
++ Use the Linux
+[timerfd](https://man7.org/linux/man-pages/man2/timerfd_create.2.html)
+API. I am fairly new to this. It does a clean, terse job of solving
+the problem. Alas it is Linux-specific, so not for other Unices. Our
+[version](src/test/c/foobar-timerfd.c).
 
 To that list we can add the focus of the page you are reading: the
 Executive solution.

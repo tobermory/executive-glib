@@ -41,7 +41,9 @@ LIB = lib$(BASENAME).a
 
 TESTS = memTests fireTests
 
-TESTS += foobar-executive foobar-executive-env foobar-timerfd
+TESTS += foobar-executive foobar-executive-env
+
+TESTS += foobar-timerfd foobar-pthreads
 
 # We use local pkgconfig info to locate glib's settings for cflags,
 # libs. Replace as necessary. To install glib-dev on Debian/Ubuntu:
@@ -83,6 +85,8 @@ clean:
 $(TESTS) : % : %.o $(LIB)
 	@echo LD $(@F) = $(^F)
 	$(ECHO)$(CC) $(LDFLAGS)	$^ $(LOADLIBES) $(LDLIBS) $(OUTPUT_OPTION)
+
+foobar-pthreads: LDLIBS += -lpthread
 
 .PHONY: default tests clean
 
