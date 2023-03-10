@@ -41,7 +41,7 @@ LIB = lib$(BASENAME).a
 
 TESTS = memTests fireTests
 
-TESTS += foobar foobar2 foobar-timerfd
+TESTS += foobar-executive foobar-executive-env foobar-timerfd
 
 # We use local pkgconfig info to locate glib's settings for cflags,
 # libs. Replace as necessary. To install glib-dev on Debian/Ubuntu:
