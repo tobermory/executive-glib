@@ -33,6 +33,8 @@
 # DAMAGE.
 #
 
+OS = $(shell uname)
+
 SHELL = /bin/bash
 
 BASENAME = executive-glib
@@ -43,7 +45,11 @@ TESTS = memTests fireTests
 
 TESTS += foobar-executive foobar-executive-env
 
-TESTS += foobar-timerfd foobar-pthreads
+TESTS += foobar-pthreads
+
+ifeq ($(OS), Linux)
+TESTS += foobar-timerfd
+endif
 
 # We use local pkgconfig info to locate glib's settings for cflags,
 # libs. Replace as necessary. To install glib-dev on Debian/Ubuntu:
