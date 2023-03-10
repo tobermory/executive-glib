@@ -21,7 +21,7 @@ received, print the line length. Concurrently with servicing this
 user I/O, print 'foo' every 5 seconds and 'bar' every 7. Exit
 gracefully after one minute.**
 
-I can think of several ways to attack this problem:
+I can think of several ways to attack this 'foobar' problem:
 
 + Create three threads, one each to handle the foo printing, the bar
 printing and the end condition.  All can use sleep() for their
