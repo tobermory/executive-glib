@@ -54,19 +54,17 @@
  */
 
 static void* foo( void* unused ) {
-  int i = 1;
   while( 2 ) {
 	sleep( 5 );
-	printf( "foo %d!\n", i++ );
+	printf( "foo!\n" );
   }
   return NULL;
 }
 
 static void* bar( void* unused ) {
-  int i = 1;
   while( 2 ) {
 	sleep( 7 );
-	printf( "bar %d!\n", i++ );
+	printf( "bar!\n" );
   }
   return NULL;
 }
